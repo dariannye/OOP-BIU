@@ -21,7 +21,14 @@ public class Inventario {
     	return stock; 
     }
     
-    //Setter
+    //Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setProductoId(int productoId) {
+        this.productoId = productoId;
+    }
 
     public void setStock(int stock) { 
     	this.stock = stock; 
