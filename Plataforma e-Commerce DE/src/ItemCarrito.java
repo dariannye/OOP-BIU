@@ -18,7 +18,11 @@ public class ItemCarrito {
     	return cantidad; 
     }
     
-    //Setter
+    //Setters
+    
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 
     public void setCantidad(int cantidad) { 
     	this.cantidad = cantidad; 
