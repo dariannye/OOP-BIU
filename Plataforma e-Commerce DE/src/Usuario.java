@@ -38,11 +38,4 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
-    public void registrar() {
-        System.out.println("Usuario registrado: " + nombre);
-    }
-
-    public void iniciarSesion() {
-        System.out.println("Inicio de sesión: " + correoElectronico);
-    }
 }
