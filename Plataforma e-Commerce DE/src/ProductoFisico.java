@@ -27,5 +27,14 @@ public class ProductoFisico extends Producto {
     public void setDimensiones(String dimensiones) {
     	this.dimensiones = dimensiones; 
     }
+    
+    @Override
+    public void mostrarDetalle() {
+        System.out.println("Físico [id=" + getId() 
+            + ", nombre=" + getNombre() 
+            + ", precio=" + getPrecio() 
+            + ", peso=" + pesoLib + "lb"
+            + ", dimensiones=" + dimensiones + "]");
+    }
 
 }

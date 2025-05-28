@@ -27,5 +27,15 @@ public class ProductoDigital extends Producto {
     public void setTamanoMB(double tamano) { 
     	this.tamano = tamano; 
     }
+    
+    
+    @Override
+    public void mostrarDetalle() {
+        System.out.println("Digital [id=" + getId() 
+            + ", nombre=" + getNombre() 
+            + ", precio=" + getPrecio() 
+            + ", formato=" + formatoArchivo 
+            + ", tamaño=" + tamano + "MB]");
+    }
 
 }
