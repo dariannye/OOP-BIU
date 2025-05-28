@@ -42,5 +42,11 @@ public class Producto {
     	this.idInventario = idInventario; 
     }
     
+
+    // Método para mostrar información genérica
+    public void mostrarDetalle() {
+        System.out.println("Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]");
+    }
+    
 }
 
