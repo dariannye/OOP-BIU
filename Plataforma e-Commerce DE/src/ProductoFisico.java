@@ -5,8 +5,8 @@ public class ProductoFisico extends Producto {
 
 	public ProductoFisico(String id, String nombre, double precio, int idInventario, double pesoLib, String dimensiones) {
 		super(id, nombre, precio, idInventario);
-		this.pesoLib = pesoLib;
-        this.dimensiones = dimensiones;
+		this.setPesoLib(pesoLib);
+		this.setDimensiones(dimensiones);
 	}
 	
 	//Getters

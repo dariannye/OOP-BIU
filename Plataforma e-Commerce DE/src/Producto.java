@@ -4,10 +4,10 @@ public abstract class Producto {
     private int idInventario;
 
     public Producto(String id, String nombre, double precio, int idInventario) {
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.idInventario = idInventario;
+        this.setId(id);
+        this.setNombre(nombre);
+        this.setPrecio(precio);
+        this.setIdInventario(idInventario);
     }
     
     //Getters

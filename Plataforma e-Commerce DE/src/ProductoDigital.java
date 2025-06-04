@@ -5,8 +5,8 @@ public class ProductoDigital extends Producto {
 
 	public ProductoDigital(String id, String nombre, double precio, int idInventario, String formatoArchivo, double tamano) {
 		super(id, nombre, precio, idInventario);
-		this.formatoArchivo = formatoArchivo;
-		this.tamano = tamano;
+		this.setFormatoArchivo(formatoArchivo);
+		this.setTamanoMB(tamano);
 	}
 	
 	//Getters
