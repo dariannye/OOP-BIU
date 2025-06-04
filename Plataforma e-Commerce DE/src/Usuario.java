@@ -3,9 +3,9 @@ public class Usuario {
     private String nombre, correoElectronico, contrasena;
 
     public Usuario(String nombre, String correoElectronico, String contrasena) {
-        this.nombre = nombre;
-        this.correoElectronico = correoElectronico;
-        this.contrasena = contrasena;
+        this.setNombre(nombre);
+        this.setCorreoElectronico(correoElectronico);
+        this.setContrasena(contrasena);
     }
     
     //Getters
@@ -25,17 +25,17 @@ public class Usuario {
     
     //Setters
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+    	if (nombre != null && !nombre.trim().isEmpty()) this.nombre = nombre;
     }
     
     
     public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
+    	if (correoElectronico != null && correoElectronico.contains("@")) this.correoElectronico = correoElectronico;
     }
 
 
     public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    	if (contrasena != null && contrasena.length() >= 6) this.contrasena = contrasena;
     }
 
 }
