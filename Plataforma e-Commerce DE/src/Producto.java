@@ -1,4 +1,4 @@
-public class Producto {
+public abstract class Producto {
     private String id, nombre;
     private double precio;
     private int idInventario;
@@ -29,13 +29,23 @@ public class Producto {
     }
     
     //Setters
+    
+    public void setId(String id) {
+        if (id != null && !id.trim().isEmpty()) {
+            this.id = id;
+        }
+    }
 
     public void setNombre(String nombre) { 
-    	this.nombre = nombre; 
+    	 if (nombre != null && !nombre.trim().isEmpty()) {
+             this.nombre = nombre;
+         } 
     }
     
     public void setPrecio(double precio) { 
-    	this.precio = precio; 
+    	  if (precio > 0) {
+              this.precio = precio;
+          } 
     }
     
     public void setIdInventario(int idInventario) { 
@@ -44,9 +54,7 @@ public class Producto {
     
 
     // Método para mostrar información genérica
-    public void mostrarDetalle() {
-        System.out.println("Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]");
-    }
+    public abstract void mostrarDetalle();
     
 }
 

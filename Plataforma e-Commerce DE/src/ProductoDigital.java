@@ -25,7 +25,8 @@ public class ProductoDigital extends Producto {
     }
 
     public void setTamanoMB(double tamano) { 
-    	this.tamano = tamano; 
+    	if (tamano > 0) {
+    		this.tamano = tamano;}
     }
     
     

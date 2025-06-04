@@ -21,11 +21,14 @@ public class ProductoFisico extends Producto {
    
     //Setters
     public void setPesoLib(double pesoLib) { 
-    	this.pesoLib = pesoLib; 
+    	if (pesoLib > 0) {
+    		this.pesoLib = pesoLib;} 
     }
     
     public void setDimensiones(String dimensiones) {
-    	this.dimensiones = dimensiones; 
+    	 if (dimensiones != null && !dimensiones.trim().isEmpty()) {
+             this.dimensiones = dimensiones;
+         } 
     }
     
     @Override
