@@ -16,7 +16,9 @@ public class CarritoDeCompras {
     
     //Agregar producto por objeto
     public void agregarProducto(Producto producto, int cantidad) {
-        productos.add(new ItemCarrito(producto, cantidad));
+    	if (producto != null && cantidad > 0) {
+            productos.add(new ItemCarrito(producto, cantidad));
+        }
     }
     
     //Agregar producto por Id

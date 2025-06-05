@@ -49,7 +49,9 @@ public abstract class Producto {
     }
     
     public void setIdInventario(int idInventario) { 
-    	this.idInventario = idInventario; 
+    	if (idInventario > 0) {
+            this.idInventario = idInventario;
+        }
     }
     
 
