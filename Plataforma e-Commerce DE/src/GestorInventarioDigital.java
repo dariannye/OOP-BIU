@@ -19,7 +19,7 @@ public class GestorInventarioDigital extends GestorInventario {
     public void actualizarStock(String idProducto, int cantidad) {
         if (stockDigital.containsKey(idProducto)) {
             stockDigital.put(idProducto, cantidad);
-            System.out.println("Stock digital actualizado para el producto: " + idProducto + "Cantidad actualizada: " + cantidad);
+            System.out.println("Stock digital actualizado para el producto: " + idProducto + " Cantidad actualizada: " + cantidad);
         } else {
             System.out.println("Producto digital no encontrado en inventario.");
         }

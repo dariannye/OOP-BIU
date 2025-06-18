@@ -26,6 +26,11 @@ public class Main {
             item.getProducto().mostrarDetalle();
             System.out.println("Cantidad: " + item.getCantidad());
         }
+        
+        GestorInventario inventarioDigital = new GestorInventarioDigital();
+        inventarioDigital.añadirProducto(p1);
+        inventarioDigital.actualizarStock(p1.getId(), 80);
+
 	}
 	
 	
