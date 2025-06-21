@@ -28,7 +28,7 @@ public class Main {
         }
         
         GestorInventario inventarioDigital = new GestorInventarioDigital();
-        inventarioDigital.añadirProducto(p1);
+        inventarioDigital.añadirProducto(p1, 15);
         inventarioDigital.actualizarStock(p1.getId(), 80);
         
         //Singleton
@@ -53,7 +53,30 @@ public class Main {
 
         pedido.setEstado("Procesando");
         pedido.setEstado("Enviado");
+        
+        //Manejo de excepciones
+        GestorInventarioFisico gestor = new GestorInventarioFisico();
+        Producto p = new ProductoFisico("PF4", "Laptop", 1200.0, 101, 2.5, "30x20x5");
+        gestor.añadirProducto(p, 12);
 
+        try {
+            gestor.consumirStock("001", 15);  // Esto lanza la excepcion
+        } catch (InventarioInsuficienteExcepcion e) {
+            System.out.println("Error de inventario: " + e.getMessage());
+        }
+        
+        ProcesoPago pago = new PagoTarjeta();
+        try {
+            pago.iniciarPago(-50);  // Esto lanza PagoFallidoException
+        } catch (PagoFallidoExcepcion e) {
+            System.out.println("Error en el pago: " + e.getMessage());
+        }
+        
+        
+        
+        
+        
+        
 	}
 	
 	
