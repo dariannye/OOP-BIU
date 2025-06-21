@@ -30,6 +30,29 @@ public class Main {
         GestorInventario inventarioDigital = new GestorInventarioDigital();
         inventarioDigital.añadirProducto(p1);
         inventarioDigital.actualizarStock(p1.getId(), 80);
+        
+        //Singleton
+        ConfiguracionSistema config = ConfiguracionSistema.getInstancia();
+        System.out.println("Conexión: " + config.getConexionBaseDatos());
+        System.out.println("Tema actual: " + config.getTemaUI());
+
+        config.setTemaUI("modo_oscuro"); // cambiar el tema
+        System.out.println("Nuevo tema: " + config.getTemaUI());
+        
+        //Factory
+        Producto p4 = FabricaEntidades.crearProducto("digital", "PD4", "Curso Java", 15.99, 1);
+        Usuario admin = FabricaEntidades.crearUsuario("administrador", "Ana", "ana@admin.com", "123456");
+
+        p4.mostrarDetalle();
+        System.out.println("Usuario creado: " + admin.getNombre());
+        
+        //Observer
+        PedidoObservable pedido = new PedidoObservable();
+        pedido.agregarObservador(new NotificadorUI());
+        pedido.agregarObservador(new GestorNotificacionesInventario());
+
+        pedido.setEstado("Procesando");
+        pedido.setEstado("Enviado");
 
 	}
 	
