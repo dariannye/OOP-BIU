@@ -1,9 +1,14 @@
 public class PagoTarjeta implements ProcesoPago {
 	
+
     @Override
-    public void iniciarPago(double monto) {
-        System.out.println("Pago con tarjeta iniciado por $" + monto);
+    public void iniciarPago(double monto) throws PagoFallidoExcepcion {
+        if (monto <= 0) {
+            throw new PagoFallidoExcepcion("El monto del pago no es válido.");
+        }
+        System.out.println("Pago iniciado por $" + monto);
     }
+
 
     @Override
     public boolean verificarPago() {

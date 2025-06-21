@@ -24,5 +24,13 @@ public class GestorInventarioDigital extends GestorInventario {
             System.out.println("Producto digital no encontrado en inventario.");
         }
     }
+    
+    public void consumirStock(String productoId, int cantidad) throws InventarioInsuficienteExcepcion {
+        int stock = stockDigital.getOrDefault(productoId, 0);
+        if (cantidad > stock) {
+            throw new InventarioInsuficienteExcepcion("Stock insuficiente para el producto: " + productoId);
+        }
+        stockDigital.put(productoId, stock - cantidad);
+    }
 
 }

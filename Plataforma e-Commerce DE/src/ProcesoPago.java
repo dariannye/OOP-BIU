@@ -1,6 +1,6 @@
 public interface ProcesoPago {
 	
-    void iniciarPago(double monto);
+    void iniciarPago(double monto) throws PagoFallidoExcepcion;
     
     boolean verificarPago();
     

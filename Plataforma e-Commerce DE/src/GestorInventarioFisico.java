@@ -25,4 +25,13 @@ public class GestorInventarioFisico extends GestorInventario {
             System.out.println("Producto físico no encontrado en inventario.");
         }
     }
+    
+    public void consumirStock(String productoId, int cantidad) throws InventarioInsuficienteExcepcion {
+        int stock = stockFisico.getOrDefault(productoId, 0);
+        if (cantidad > stock) {
+            throw new InventarioInsuficienteExcepcion("Stock insuficiente para el producto: " + productoId);
+        }
+        stockFisico.put(productoId, stock - cantidad);
+    }
+
 }
