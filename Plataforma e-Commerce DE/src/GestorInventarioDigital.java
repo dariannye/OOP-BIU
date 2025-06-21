@@ -4,8 +4,8 @@ public class GestorInventarioDigital extends GestorInventario {
     private HashMap<String, Integer> stockDigital = new HashMap<>();
 
     @Override
-    public void añadirProducto(Producto producto) {
-        stockDigital.put(producto.getId(), 100); 
+    public void añadirProducto(Producto producto, int cantidad) {
+        stockDigital.put(producto.getId(), cantidad); 
         System.out.println("Producto digital añadido: " + producto.getNombre());
     }
 

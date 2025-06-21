@@ -5,8 +5,8 @@ public class GestorInventarioFisico extends GestorInventario {
     private HashMap<String, Integer> stockFisico = new HashMap<>();
 
     @Override
-    public void añadirProducto(Producto producto) {
-        stockFisico.put(producto.getId(), 10);
+    public void añadirProducto(Producto producto, int cantidad) {
+        stockFisico.put(producto.getId(), cantidad);
         System.out.println("Producto físico añadido: " + producto.getNombre());
     }
 
