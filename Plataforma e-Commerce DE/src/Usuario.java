@@ -1,5 +1,5 @@
 
-public class Usuario {
+public abstract class Usuario {
     private String nombre, correoElectronico, contrasena;
 
     public Usuario(String nombre, String correoElectronico, String contrasena) {
